@@ -1,0 +1,17 @@
+//Previous syntaxis version
+
+/*
+    @import 'base/variables';
+    @import 'content/content';
+*/
+
+//Latest syntaxis version
+
+/*
+    It is necessary to create an index.scss in the folder base and content.
+    @forward is used in the index to make our variables avaibles
+    @use to import our content to the app
+*/
+
+@use 'base';
+@use 'layout';

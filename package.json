@@ -1,0 +1,25 @@
+{
+    "name": "musicfestival",
+    "version": "1.0.0",
+    "description": "Project with Gulp, SASS and HTML",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch src/scss:build/css"
+    },
+    "keywords": [
+        "SASS",
+        "Gulp",
+        "HTML"
+    ],
+    "author": "Pablo Fernández Campos",
+    "license": "ISC",
+    "dependencies": {
+        "dart-sass": "^1.25.0"
+    },
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-plumber": "^1.2.1",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.49.9"
+    }
+}

@@ -1,0 +1,25 @@
+@use '../base/variables' as v;
+@use 'base/mixins' as m;
+.header {
+    background-color: v.$green;
+    h1 {
+        color: v.$white;
+        text-align: center;
+    }
+}
+
+.main-navigation {
+    a {
+        display: block;
+        color: v.$white;
+        font-size: 2.4rem;
+        &:hover {
+            color: v.$yellow;
+        }
+    }
+}
+
+
+/*.prueba-mixing {
+    @include m.heading(v.$pink, true);
+}*/
