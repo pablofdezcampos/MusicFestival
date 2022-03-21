@@ -356,6 +356,7 @@ body {
 p {
   font-size: 2rem;
   color: black;
+  line-height: 1.3;
 }
 
 .container {
@@ -384,6 +385,11 @@ h2 {
 
 h3 {
   font-size: 3rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /*@mixin heading($color: white, $letter-spacing: false) {
@@ -437,6 +443,72 @@ h3 {
 /*.prueba-mixing {
     @include m.heading(v.$pink, true);
 }*/
+.video {
+  position: relative;
+  min-height: 50rem;
+  max-height: 70rem;
+  overflow: hidden;
+}
+.video .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #a50371;
+  background: linear-gradient(270deg, rgba(165, 3, 255, 0.5) 0%, rgba(255, 0, 125, 0.3) 100%);
+  display: flex;
+  align-items: center;
+}
+.video video {
+  width: auto;
+  display: block;
+  /*@include m.desktop {
+      width: 100%;
+  }*/
+}
+
+.video-container {
+  z-index: 10;
+}
+.video-container h2 {
+  color: white;
+  font-size: 7rem;
+  margin: 0;
+}
+.video-container p {
+  background-color: #e95b73;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.about-festival {
+  padding: 5rem 0;
+}
+@media (min-width: 768px) {
+  .about-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8rem;
+  }
+}
+
+.festival-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.festival-container h2 {
+  margin-bottom: 2rem;
+}
+.festival-container .date {
+  color: #e95b73;
+  font-weight: bold;
+}
+
 /*
     @import 'base/variables';
     @import 'content/content';
