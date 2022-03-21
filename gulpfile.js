@@ -4,9 +4,15 @@
    To execute -> gulp workName
 */
 
-const { src, dest, watch } = require('gulp');
+//CSS
+const { src, dest, watch, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const pumbler = require('gulp-plumber');
+
+//Images
+const cache = require('gulp-cache')
+const imagemin = require('gulp-imagemin')
+const webp = require('gulp-webp');
 
 function css(done) { //Done == CallBack
 
@@ -17,10 +23,31 @@ function css(done) { //Done == CallBack
     done();
 }
 
+function images(done) {
+    const options = {
+        optimizationLevel: 3
+    }
+    src('src/img/**/*.{png, jpg}')
+        .pipe(cache(imagemin(options)))
+        .pipe(dest('build/img'))
+}
+
+function webpVersion(done) {
+    const options = {
+        quality: 50
+    };
+    src('src/img/**/*.{png, jpg}')
+        .pipe(webp(options))
+        .pipe(dest('build/img'))
+    done();
+}
+
 function dev(done) {
     watch('src/scss/**/*.scss', css);
     done();
 }
 
 exports.css = css;
-exports.dev = dev;
+exports.images = images;
+exports.webpVersion = webpVersion;
+exports.dev = parallel(images, webpVersion, dev);
