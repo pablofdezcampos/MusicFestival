@@ -12,7 +12,9 @@
 }
 
 @mixin desktop {
-    @media (min-width: v.$desktop) {}
+    @media (min-width: v.$desktop) {
+        @content;
+    }
 }
 
 @mixin desktopXL {
@@ -24,7 +26,7 @@
 @mixin grid($columns, $gap) {
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
-    column-gap: $gap;
+    gap: $gap;
 }
 
 @mixin resetList() {
