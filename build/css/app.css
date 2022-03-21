@@ -390,6 +390,8 @@ h3 {
 img {
   max-width: 100%;
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 /*@mixin heading($color: white, $letter-spacing: false) {

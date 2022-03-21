@@ -4,8 +4,9 @@
    To execute -> gulp workName
 */
 
-//CSS
 const { src, dest, watch, parallel } = require('gulp');
+
+//CSS
 const sass = require('gulp-sass')(require('sass'));
 const pumbler = require('gulp-plumber');
 
@@ -13,6 +14,7 @@ const pumbler = require('gulp-plumber');
 const cache = require('gulp-cache')
 const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp');
+const avif = require('gulp-avif');
 
 function css(done) { //Done == CallBack
 
@@ -36,10 +38,19 @@ function webpVersion(done) {
     const options = {
         quality: 50
     };
-    src('src/img/**/*.{png, jpg}')
+    src('src/img/**/*.{jpg, png}')
         .pipe(webp(options))
         .pipe(dest('build/img'))
     done();
+}
+
+function avifVersion() {
+    const options = {
+        quality: 50
+    };
+    src('src/img/**/*.{jpg, png}')
+        .pipe(avif(options))
+        .pipe(dest('build/img'))
 }
 
 function dev(done) {
@@ -50,4 +61,5 @@ function dev(done) {
 exports.css = css;
 exports.images = images;
 exports.webpVersion = webpVersion;
-exports.dev = parallel(images, webpVersion, dev);
+exports.avifVersion = avifVersion;
+exports.dev = parallel(images, webpVersion, avifVersion, dev);
