@@ -1,0 +1,80 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.lineup {
+    background-color: v.$pink;
+    padding-top: 5rem;
+    padding: 5rem 0;
+    h3,
+    p {
+        text-align: center;
+        color: v.$white;
+    }
+    .day {
+        text-transform: uppercase;
+        margin-bottom: 5rem;
+        margin: 5rem;
+    }
+    .stage {
+        padding-top: 2rem;
+        @include m.phone {
+            margin-top: 2rem;
+        }
+        p {
+            &:after {
+                content: '';
+                display: block;
+                margin: 2rem auto 0 auto;
+                background-position: center center;
+                width: 20rem;
+                height: 10rem;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+.edm .stage-name:after {
+    background-image: url(../img/icono_edm.png)
+}
+
+.rock .stage-name:after {
+    background-image: url("../img/icono_rock.png")
+}
+
+.stage-container {
+    margin-top: 1rem;
+    @include m.tablet {
+        @include m.grid(2,
+        5rem);
+    }
+    p {
+        color: v.$black;
+    }
+}
+
+.calendar {
+    @include m.resetList;
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-yellow {
+    background-color: v.$yellow;
+    li:nth-child(odd) {
+        //Select the odd elemetns
+        background-color: darken(v.$yellow, 10%);
+    }
+}
+
+.bg-green {
+    background-color: v.$green;
+    li:nth-child(odd) {
+        background-color: darken(v.$green, 10%);
+    }
+}

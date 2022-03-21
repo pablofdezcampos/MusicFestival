@@ -27,6 +27,12 @@
     column-gap: $gap;
 }
 
+@mixin resetList() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 
 /*@mixin heading($color: white, $letter-spacing: false) {
     text-transform: uppercase;
