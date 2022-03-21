@@ -8,4 +8,5 @@ function startApp() {
 
 function createGallery() {
     const gallery = document.querySelector('.images-gallery');
+
 }
