@@ -12,6 +12,7 @@ const pumbler = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 
 //Images
 const cache = require('gulp-cache')
@@ -22,9 +23,11 @@ const avif = require('gulp-avif');
 function css(done) { //Done == CallBack
 
     src('src/scss/**/*.scss') //Identy the file .SCSS to compile || With **/* listen to all the files that has .scss extension
+        .pipe(sourcemaps.init())
         .pipe(pumbler())
         .pipe(sass()) //Compile
-        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(postcss([autoprefixer(), cssnano()])) //To compile the css that generates gulp
+        .pipe(sourcemaps.write('.')) //To map the css generates gulp
         .pipe(dest('build/css')) //Storage it in the hard disk
     done();
 }
