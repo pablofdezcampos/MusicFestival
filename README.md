@@ -15,12 +15,10 @@
 - Webp, provides a higher compression rate for images while keeping quality intact.
 - JavaScript (js), to modernzr.js
 # Page Structure
-- Header
-- Footer
-- Main Section
-- Entry Section
-- Contact Section
-- AboutUs Section
+- HomePage:
+    - LineUp Section
+    - Gallery Section
+    - Tickets Section
 
 # Development Errors
 - In this project I do not add a Database for the Backend, I have to repeat HTML code. That is a wrong practise.
