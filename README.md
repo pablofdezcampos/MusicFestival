@@ -1,4 +1,4 @@
-# MusicFestival
+# Music Festival
 
 # Description
 - Project to develop a front-end web page.
