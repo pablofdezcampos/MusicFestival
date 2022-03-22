@@ -5,6 +5,7 @@
     h3 {
         text-align: center;
         color: v.$white;
+        margin-bottom: 2rem;
     }
     .tickets-container {
         @include m.tablet {
@@ -14,15 +15,19 @@
 }
 
 .pass {
-    color: v.$black;
+    .offer-pass {
+        color: v.$white;
+        text-align: center;
+        font-size: 2.8rem;
+    }
     .header-pass,
     .footer-pass {
         text-align: center;
-        color: v.$white;
-        margin: 0;
+        padding: .3rem;
         p {
             text-transform: uppercase;
             font-size: 1.6rem;
+            color: v.$white;
         }
     }
     .header-pass {
@@ -30,13 +35,24 @@
     }
     .body-pass {
         background-color: v.$white;
+        margin: -.3rem;
+        ul {
+            @include m.resetList;
+            li,
+             :nth-child(odd) {
+                padding: .5rem;
+                background-color: v.$white;
+                color: v.$black;
+                border-bottom: 1px solid #e1e1e1;
+            }
+        }
     }
     .footer-pass {
         background-color: v.$violet;
         p {
+            margin: .5rem;
             font-size: 2.4rem;
             font-weight: bold;
-            color: v.$white;
         }
     }
 }
