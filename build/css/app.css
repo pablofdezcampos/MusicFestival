@@ -724,6 +724,15 @@ img {
   font-weight: bold;
 }
 
+.site-footer {
+  background-color: #e95b73;
+  padding: 1rem;
+  text-align: center;
+}
+.site-footer p {
+  color: white;
+}
+
 /*
     @import 'base/variables';
     @import 'content/content';
