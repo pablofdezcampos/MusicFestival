@@ -9,6 +9,9 @@ const { src, dest, watch, parallel } = require('gulp');
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const pumbler = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
 
 //Images
 const cache = require('gulp-cache')
@@ -21,6 +24,7 @@ function css(done) { //Done == CallBack
     src('src/scss/**/*.scss') //Identy the file .SCSS to compile || With **/* listen to all the files that has .scss extension
         .pipe(pumbler())
         .pipe(sass()) //Compile
+        .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(dest('build/css')) //Storage it in the hard disk
     done();
 }
