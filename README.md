@@ -8,8 +8,8 @@
 
 # Technologies 
 - HTML5 for the sctructure and elements of the page.
-- CSS3 for the styles of the elements in the page.
-- In CSS3 to take a good structure I use the metodology of BEM CSS.
+- SASS for the styles of the elements in the page.
+- In SASS we use CSS3. To take a good structure I use the metodology of BEM CSS.
 - Use of node.js due to the use of sass.
 - To compile sass we need gulp, to use gulp it is necessary to have node.js
 - Preload, specifying resources that your page will arrive very soon, that you want to start loading early in the page's lifecycle, before the browsers main rendering.
