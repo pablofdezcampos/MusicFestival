@@ -491,6 +491,11 @@ img {
 .header {
   background-color: #4CB8B3;
 }
+.header.fix {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0.3rem 0.3rem 0.3rem #333;
+}
 .header h1 {
   color: white;
   text-align: center;
